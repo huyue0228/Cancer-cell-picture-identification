@@ -1,6 +1,6 @@
 import warnings
 warnings.filterwarnings("ignore")
-from hyperpara_tuning import hyperparameter_tuning, train
+from hyperpara_tuning import hyperparameter_tuning
 from train_utils import train_model
 from evaluate_utils import evaluate
 from visualization import visualise_model
@@ -25,8 +25,7 @@ def main():
     
     # Training
     input("Press Enter to continue to the next step...")
-    # model=train_model(best_trial.config, data_dir, csv_file)
-    model = train(best_trial.config, data_dir, csv_file, checkpoint_dir=None)
+    model=train_model(best_trial.config, data_dir, csv_file)
     print(model)
     print("Finished training the model.")
 
